@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Timeless Tracks – 世代を超えたプレイリスト</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+  
+    <header class="app-header">
+        <h1>Timeless Tracks</h1>
+        <p class="subtitle">世代を超えて、お気に入りの曲をつなぐプレイリストボード</p>
+    </header>
+
+    <main class="app-main">
+        <div class="app-layout">
+            <!-- 左カラム：ボード＆検索 -->
+            <div class="left-panel">
+                <!-- ボードID入力エリア -->
+                <section class="card" id="board-section">
+                    <div class="board-header">
+                        <h2>1. MUSICボードに参加 / 作成</h2>
+                        <button id="joinBoardBtn" class="join-btn-compact">このIDでスタート</button>
+                    </div>
+                    <div class="board-row">
+                        <div class="board-input-group">
+                            <label for="boardIdInput" class="label">ボードIDを入力</label>
+                            <input id="boardIdInput" type="text" placeholder="例: family2025 / clubA など" />
+                        </div>
+                        <div class="board-input-group">
+                            <label for="themeInput" class="label">リストテーマを入力</label>
+                            <input id="themeInput" type="text" placeholder="例: 青春ソング / ドライブ用 など" />
+                        </div>
+                    </div>
+                    <p class="hint">
+                        同じボードIDを使うと、友だち・家族・ゼミなど、みんなで同じボードを共有できます。
+                    </p>
+                    <p class="current-board" id="currentBoardLabel">現在のボード: －</p>
+                </section>
+
+                <!-- 曲検索エリア -->
+                <section class="card" id="search-section">
+                    <div class="search-header">
+                        <h2>2. 曲を検索してボードに追加</h2>
+                        <button id="searchBtn" class="search-btn-compact">iTunesで検索</button>
+                    </div>
+                    <p class="hint">
+                        好きな曲名やアーティスト名を入力して「検索」→ 自分の生まれ年を選んでボードに追加します。
+                    </p>
+
+                    <div class="search-form">
+                        <div class="search-row">
+                            <div class="search-input-group">
+                                <label for="keywordInput" class="label">曲名 / アーティスト</label>
+                                <input id="keywordInput" type="text" placeholder="例: Spitz ロビンソン / Official髭男dism など" />
+                            </div>
+                            <div class="search-select-group">
+                                <label for="birthGroupSelect" class="label">あなたの生まれ年</label>
+                                <select id="birthGroupSelect">
+                                    <!-- JavaScript で生まれ年を5年刻みで生成 -->
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="searchStatus" class="status-message"></div>
+
+                    <div id="searchResults" class="results-list">
+                        <!-- 検索結果カードをここに表示 -->
+                    </div>
+                </section>
+            </div>
+
+            <!-- 右カラム：プレイリスト -->
+            <div class="right-panel">
+                <section class="card" id="playlist-section">
+                    <div class="playlist-header">
+                        <h2>3. 世代別プレイリスト</h2>
+                        <p class="hint-inline">
+                            17歳の時の年号（令和・平成・昭和）ごとに、みんなの曲が並びます。世代を超えた「音楽のグラデーション」を眺めてみよう。
+                        </p>
+                    </div>
+
+                    <!-- テーマ表示エリア -->
+                    <div id="themeDisplay" class="theme-display" style="display: none;">
+                        <h1 class="theme-title" id="themeTitle">テーマ未設定</h1>
+                    </div>
+
+                    <div id="playlistGrid" class="playlist-grid">
+                        <!-- 年代ごとのカラム＋曲カードをここに描画 -->
+                    </div>
+                </section>
+            </div>
+
+        </div>
+
+
+    </main>
+
+    <!-- プレイヤー（下部固定） -->
+    <footer class="player-footer">
+        <p class="player-label">▶︎ プレビュー再生</p>
+        <audio id="audioPlayer" controls></audio>
+    </footer>
+
+    <!-- Firebase 初期化 -->
+    <script type="module" src="firebase.js"></script>
+    <!-- アプリ本体ロジック -->
+    <script type="module" src="main.js"></script>
+</body>
+
+</html>
