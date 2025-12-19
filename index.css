@@ -22,11 +22,11 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url(img/bg_clock.jpg);
+  background-image: url('/img/bg_clock.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.5;
+  opacity: 0.2;
   z-index: -1;
 }
 
@@ -536,9 +536,9 @@ audio {
   }
 }
 
-/* ===========================
-   🌈 テーマ表示エリア（虹色グラデ）
-   =========================== */
+/* ==============================================
+   🌈 テーマ表示エリア（虹色グラデーション）
+   ============================================== */
 .theme-display {
   text-align: center;
   padding: 20px 16px;
@@ -594,7 +594,7 @@ audio {
   margin-top: 12px;
 }
 
-/* スクロールバーのスタイル（WebKit対応ブラウザ）要復習エリア */
+/* スクロールバーのスタイル（WebKit対応ブラウザ） */
 .playlist-grid::-webkit-scrollbar {
   height: 8px;
 }

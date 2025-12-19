@@ -172,7 +172,7 @@ function joinBoard() {
     });
 }
 
-// iTunes Search API 検索
+// iTunes Search API で検索
 async function searchTracks() {
     const keyword = keywordInput.value.trim();
     if (!keyword) {
@@ -280,7 +280,7 @@ function renderSearchResults(results) {
     });
 }
 
-// Realtime Database に曲追加
+// Realtime Database に曲を追加
 async function addTrackToBoard(item) {
     if (!currentBoardId) {
         alert("先にボードIDを設定してください。");
